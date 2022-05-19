@@ -1,0 +1,23 @@
+.border-wrap {
+    background-color: #127858;
+    width: 100%;
+    height: 99%;
+}
+
+.border-wrap-top {
+    background-color: #124858;
+    width: 100%;
+    height: 10%;
+}
+
+.border-wrap-middle {
+    background-color: #121258;
+    width: 100%;
+    height: 80%;
+}
+
+.border-wrap-bottom {
+    background-color: #126458;
+    width: 100%;
+    height: 10%;
+}
