@@ -6,54 +6,55 @@ import Home from "./pages/Home";
 import Border from "./pages/border/Border";
 
 import { Layout, Menu, Breadcrumb } from "antd";
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from "@ant-design/icons";
+
+import { useState } from "react";
+
+import { useNavigate } from "react-router-dom";
+
 const { Header, Content, Sider, Footer } = Layout;
 
 function App() {
-    const items1 = ["1", "2", "3"].map((key) => ({
-        key,
-        label: `nav ${key}`,
-    }));
-    const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, index) => {
-        const key = String(index + 1);
-        return {
-            key: `sub${key}`,
+    const navigate = useNavigate();
+    const menuText = ["Home", "게시판"];
+    const menuLink = ["/home", "/border"];
+    const [lastView, setLastView] = useState(menuLink[0]);
 
-            label: `subnav ${key}`,
-            children: new Array(4).fill(null).map((_, j) => {
-                const subKey = index * 4 + j + 1;
-                return {
-                    key: subKey,
-                    label: `option${subKey}`,
-                };
-            }),
+    //SideBar Item 선언
+    const sideBarItems = menuText.map((data, index) => {
+        return {
+            key: `${menuLink[index]}`,
+            label: `${data}`,
         };
     });
+
     return (
-        <Layout>
-            <Header className="header">
+        <Layout className="root-layout">
+            <Header className="header-layout">
                 <div className="logo" />
-                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]} items={items1} />
             </Header>
             <Layout>
                 <Sider width={200} className="site-layout-background-Sider">
                     <Menu
                         mode="inline"
-                        defaultSelectedKeys={["1"]}
-                        defaultOpenKeys={["sub1"]}
+                        defaultSelectedKeys={lastView}
+                        defaultOpenKeys={lastView}
                         style={{
-                            height: "100%",
+                            height: "2560px",
                             borderRight: 0,
                         }}
-                        items={items2}
+                        items={sideBarItems}
+                        onClick={(e) => {
+                            setLastView(e.key);
+                            navigate(e.key);
+                            console.log(lastView);
+                        }}
                     />
                 </Sider>
-                <Layout style={{ paddingTop: "1vh", paddingLeft: "1vh", paddingRight: "1vh" }}>
+                <Layout style={{ paddingTop: "1%", paddingLeft: "1%", paddingRight: "1%" }}>
                     <Content
                         className="site-layout-background"
                         style={{
                             margin: 0,
-                            minHeight: 280,
                         }}
                     >
                         <Routes>
@@ -64,7 +65,7 @@ function App() {
                     </Content>
                 </Layout>
             </Layout>
-            <Footer className="footer">
+            <Footer className="footer-layout">
                 <center>
                     <span>CopyRight</span>
                 </center>
