@@ -7,7 +7,7 @@ import Border from "./pages/border/Border";
 
 import { Layout, Menu, Breadcrumb } from "antd";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
@@ -18,6 +18,14 @@ function App() {
     const menuText = ["Home", "게시판"];
     const menuLink = ["/home", "/border"];
     const [lastView, setLastView] = useState(menuLink[0]);
+    const webBrowserWidth = 1000;
+    const clientMode = () => {
+        //접속한 브라우저 크기로 Mode 체크
+        let mode = window.innerWidth < webBrowserWidth ? "M" : "W";
+        return mode;
+    };
+
+    const [userMode, setUserMode] = useState(clientMode());
 
     //SideBar Item 선언
     const sideBarItems = menuText.map((data, index) => {
@@ -29,19 +37,13 @@ function App() {
 
     return (
         <Layout className="root-layout">
-            <Header className="header-layout">
-                <div className="logo" />
-            </Header>
-            <Layout>
-                <Sider width={200} className="site-layout-background-Sider">
+            <Header className="header-layout"></Header>
+            {userMode === "M" ? (
+                <>
                     <Menu
-                        mode="inline"
+                        theme="dark"
+                        mode="horizontal"
                         defaultSelectedKeys={lastView}
-                        defaultOpenKeys={lastView}
-                        style={{
-                            height: "2560px",
-                            borderRight: 0,
-                        }}
                         items={sideBarItems}
                         onClick={(e) => {
                             setLastView(e.key);
@@ -49,8 +51,33 @@ function App() {
                             console.log(lastView);
                         }}
                     />
-                </Sider>
-                <Layout style={{ paddingTop: "1%", paddingLeft: "1%", paddingRight: "1%" }}>
+                </>
+            ) : null}
+
+            <Layout>
+                {userMode === "W" ? (
+                    <>
+                        <Sider width={"12vw"} className="site-layout-background-Sider">
+                            <Menu
+                                mode="inline"
+                                defaultSelectedKeys={lastView}
+                                defaultOpenKeys={lastView}
+                                style={{
+                                    height: "2560px",
+                                    borderRight: 0,
+                                }}
+                                items={sideBarItems}
+                                onClick={(e) => {
+                                    setLastView(e.key);
+                                    navigate(e.key);
+                                    console.log(lastView);
+                                }}
+                            />
+                        </Sider>
+                    </>
+                ) : null}
+
+                <Layout style={{ paddingTop: "1%", paddingLeft: "1%", paddingRight: "5%" }}>
                     <Content
                         className="site-layout-background"
                         style={{
