@@ -27,8 +27,22 @@
     float: left;
 }
 .border-wrap-top-search {
-    width: 55%;
+    width: 50%;
+
+    margin: 1vh 30% 2vh 25%;
     float: left;
+
+    font-size: 0.8em;
+    padding: 1vh 2% 1vh;
+}
+
+.border-top-search-input {
+    font-size: 2.5vmin;
+    height: 5vh;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #333333;
+    padding: 1.5vmin;
 }
 .border-content-top-title {
     width: 100%;
