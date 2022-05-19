@@ -1,11 +1,11 @@
 ## BOARD PROJECT
-
+    - 게시판 프로젝트
 ## DB
 
 ## DB Structure
 
 ## Skill
-
+    - React
 ## Link
 
 ## Rule
