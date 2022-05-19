@@ -1,3 +1,8 @@
+.root-layout {
+    overflow-x: hidden;
+    overflow-y: hidden !important;
+    height: 99.99vh;
+}
 .logo {
     float: left;
     width: 120px;
@@ -12,15 +17,20 @@
 }
 
 .site-layout-background {
-    background: #fff;
-    height: 89vh;
+    height: 100%;
     overflow: hidden;
 }
 
 .site-layout-background-Sider {
-    background: #aaa;
-    height: 90vh;
+    height: 100%;
     overflow: hidden;
     outline: 1px solid #aaa;
     outline-offset: -1px;
+}
+.header-layout {
+    height: 5% !important;
+}
+.footer-layout {
+    background-color: #000 !important;
+    height: 5% !important;
 }
