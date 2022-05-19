@@ -10,6 +10,7 @@ import { Layout, Menu, Breadcrumb } from "antd";
 import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
+import { UserOutlined } from "@ant-design/icons";
 
 const { Header, Content, Sider, Footer } = Layout;
 
@@ -37,7 +38,6 @@ function App() {
 
     return (
         <Layout className="root-layout">
-            <Header className="header-layout"></Header>
             {userMode === "M" ? (
                 <>
                     <Menu
@@ -52,7 +52,20 @@ function App() {
                         }}
                     />
                 </>
-            ) : null}
+            ) : (
+                <Header className="header-layout">
+                    {" "}
+                    <UserOutlined
+                        style={{
+                            color: "#333",
+                            fontSize: "3vh",
+                            marginTop: "1vh",
+                            marginRight: "1vw",
+                            float: "right",
+                        }}
+                    />{" "}
+                </Header>
+            )}
 
             <Layout>
                 {userMode === "W" ? (
@@ -77,7 +90,7 @@ function App() {
                     </>
                 ) : null}
 
-                <Layout style={{ paddingTop: "1%", paddingLeft: "1%", paddingRight: "5%" }}>
+                <Layout style={{ paddingTop: "1%", paddingLeft: "2%", paddingRight: "2%" }}>
                     <Content
                         className="site-layout-background"
                         style={{

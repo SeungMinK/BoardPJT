@@ -29,6 +29,7 @@
 }
 .header-layout {
     height: 5% !important;
+    background-color: #aaa !important;
 }
 .footer-layout {
     height: 3% !important;
