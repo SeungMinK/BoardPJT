@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../css/border.css";
-import { List, Typography, Divider } from "antd";
+
 function Border() {
     const data = [
         {
@@ -52,17 +52,21 @@ function Border() {
             count: "54",
         },
     ];
+    const [searchKeyword, setSearchKeyword] = useState();
     return (
         <>
             <div className="border-wrap">
                 <header className="border-wrap-top">
-                    <div className="border-wrap-top-title">
-                        <span className="border-content-top-title">[아이콘]</span>
-                        <span className="border-content-top-title"> 게시판</span>
-                    </div>
                     <div className="border-wrap-top-search">
-                        <span className="border-content-top-title">[아이콘]</span>
-                        <span className="border-content-top-title"> 조회</span>
+                        <input
+                            className="border-top-search-input"
+                            type="text"
+                            maxLength="25"
+                            placeholder="제목 또는 내용을 검색해주세요."
+                            onChange={(e) => {
+                                setSearchKeyword(e.target.value);
+                            }}
+                        />
                     </div>
                 </header>
                 <section className="border-wrap-middle">
@@ -75,19 +79,21 @@ function Border() {
                             <th>조회수</th>
                         </thead>
                         <tbody>
-                            {data.map((data, index) => {
-                                return (
-                                    <>
-                                        <tr style={{ border: "1px solid #222" }}>
-                                            <td>{index + 1}</td>
-                                            <td>{data.title}</td>
-                                            <td>{data.createid}</td>
-                                            <td>{data.createtm}</td>
-                                            <td>{data.count}</td>
-                                        </tr>
-                                    </>
-                                );
-                            })}
+                            {data
+                                .filter((data) => data.title.includes(searchKeyword))
+                                .map((data, index) => {
+                                    return (
+                                        <>
+                                            <tr style={{ border: "1px solid #222" }}>
+                                                <td>{index + 1}</td>
+                                                <td>{data.title}</td>
+                                                <td>{data.createid}</td>
+                                                <td>{data.createtm}</td>
+                                                <td>{data.count}</td>
+                                            </tr>
+                                        </>
+                                    );
+                                })}
                         </tbody>
                         <tfoot style={{ height: "10%" }}>
                             <div>
