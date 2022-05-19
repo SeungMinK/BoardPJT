@@ -13,4 +13,14 @@
 
 .site-layout-background {
     background: #fff;
+    height: 89vh;
+    overflow: hidden;
+}
+
+.site-layout-background-Sider {
+    background: #aaa;
+    height: 90vh;
+    overflow: hidden;
+    outline: 1px solid #aaa;
+    outline-offset: -1px;
 }

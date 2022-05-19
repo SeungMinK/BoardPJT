@@ -7,7 +7,7 @@ import Border from "./pages/border/Border";
 
 import { Layout, Menu, Breadcrumb } from "antd";
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from "@ant-design/icons";
-const { Header, Content, Sider } = Layout;
+const { Header, Content, Sider, Footer } = Layout;
 
 function App() {
     const items1 = ["1", "2", "3"].map((key) => ({
@@ -36,7 +36,7 @@ function App() {
                 <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]} items={items1} />
             </Header>
             <Layout>
-                <Sider width={200} className="site-layout-background">
+                <Sider width={200} className="site-layout-background-Sider">
                     <Menu
                         mode="inline"
                         defaultSelectedKeys={["1"]}
@@ -48,24 +48,10 @@ function App() {
                         items={items2}
                     />
                 </Sider>
-                <Layout
-                    style={{
-                        padding: "0 24px 24px",
-                    }}
-                >
-                    <Breadcrumb
-                        style={{
-                            margin: "16px 0",
-                        }}
-                    >
-                        <Breadcrumb.Item>Home</Breadcrumb.Item>
-                        <Breadcrumb.Item>List</Breadcrumb.Item>
-                        <Breadcrumb.Item>App</Breadcrumb.Item>
-                    </Breadcrumb>
+                <Layout style={{ paddingTop: "1vh", paddingLeft: "1vh", paddingRight: "1vh" }}>
                     <Content
                         className="site-layout-background"
                         style={{
-                            padding: 24,
                             margin: 0,
                             minHeight: 280,
                         }}
@@ -78,6 +64,11 @@ function App() {
                     </Content>
                 </Layout>
             </Layout>
+            <Footer className="footer">
+                <center>
+                    <span>CopyRight</span>
+                </center>
+            </Footer>
         </Layout>
     );
 }
