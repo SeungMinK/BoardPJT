@@ -52,7 +52,7 @@ function Border() {
             count: "54",
         },
     ];
-    const [searchKeyword, setSearchKeyword] = useState();
+    const [searchKeyword, setSearchKeyword] = useState("");
     return (
         <>
             <div className="border-wrap">
