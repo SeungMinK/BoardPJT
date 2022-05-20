@@ -5,7 +5,7 @@
 
 ### DB Structure
 
-![DB_TABLE](https://user-images.githubusercontent.com/20696473/169437528-7e5b96e1-821f-4725-ac22-280b8c191438.JPG)
+![DB_TABLE](https://user-images.githubusercontent.com/20696473/169440768-56422aa9-6b8f-415f-8f1d-5982a1e4f938.JPG)
 
 ### SQL
 
