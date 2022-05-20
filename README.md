@@ -1,8 +1,13 @@
 ## BOARD PROJECT
     게시판 프로젝트
+
 ## DB
 
-## DB Structure
+### DB Structure
+
+(https://user-images.githubusercontent.com/20696473/169436854-4414d1b4-0bbe-40c8-a228-a81d31d84e8d.JPG)
+
+### SQL
 
 ## Skill
     React
