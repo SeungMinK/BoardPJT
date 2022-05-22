@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import Login from "./pages/sign/Login";
 import Home from "./pages/Home";
-import Board from "./pages/board/board";
+import Board from "./pages/board/Board";
 
 import { Layout, Menu, Breadcrumb } from "antd";
 
