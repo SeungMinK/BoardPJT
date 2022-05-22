@@ -10,10 +10,13 @@
 ### SQL
 
 ```
+-- 
+
 CREATE TABLE `tbl_board` (
   `BOARD_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '게시글 ID',
   `TITLE` varchar(50) NOT NULL COMMENT '제목',
   `CONTENT` varchar(5000) NOT NULL COMMENT '내용',
+  `COUNT` int(11) NOT NULL DEFAULT 0 COMMENT '조회수',
   `REG_DT` datetime NOT NULL COMMENT '등록 일시',
   `REG_USER_ID` varchar(50) NOT NULL COMMENT '등록한 사용자 ID',
   `UPD_DT` datetime DEFAULT NULL COMMENT '수정 일시',
@@ -21,7 +24,7 @@ CREATE TABLE `tbl_board` (
   `DEL_DT` datetime DEFAULT NULL COMMENT '삭제 일시',
   `DEL_USER_ID` varchar(50) DEFAULT NULL COMMENT '삭제한 사용자 ID',
   PRIMARY KEY (`BOARD_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='게시글을 위한 테이블';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COMMENT='게시글을 위한 테이블';
  
  
 CREATE TABLE `tbl_reply` (
