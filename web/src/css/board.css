@@ -62,6 +62,10 @@
   height: 5vh;
 }
 
+.board-btn-add {
+  float: right;
+}
+
 @media (max-width: 1500px) {
   .board-wrap {
     font-size: 16px;
