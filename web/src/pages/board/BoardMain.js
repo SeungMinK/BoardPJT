@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../css/board.css";
 import axios from "axios";
+import { Button } from "antd";
 
 /*게시판 조회 화면 */
 function BoardMain() {
@@ -10,6 +11,10 @@ function BoardMain() {
   const [searchKeyword, setSearchKeyword] = useState("");
   const onContentClickHandelr = (BOARD_ID) => {
     console.log(BOARD_ID);
+  };
+
+  const onAddBtnClickHandelr = () => {
+    console.log("글쓰기 페이지로 이동");
   };
 
   useEffect(() => {
@@ -57,7 +62,7 @@ function BoardMain() {
                       return (
                         <>
                           <tr
-                            style={{ border: "1px solid #222" }}
+                            className="board-wrap-middle-table-content"
                             onClick={() => {
                               onContentClickHandelr(data.BOARD_ID);
                             }}
@@ -80,7 +85,16 @@ function BoardMain() {
             </tfoot>
           </table>
         </section>
-        <footer className="board-wrap-bottom"></footer>
+        <footer className="board-wrap-bottom">
+          <Button
+            className="board-btn-add"
+            onClick={() => {
+              onAddBtnClickHandelr();
+            }}
+          >
+            글쓰기
+          </Button>
+        </footer>
       </div>
     </>
   );
