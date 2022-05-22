@@ -13,13 +13,13 @@
 
 .board-wrap-middle {
   width: 100%;
-  height: 90%;
+  height: 80%;
   text-align: center;
 }
 
 .board-wrap-bottom {
   width: 100%;
-  height: 0%;
+  height: 10%;
 }
 
 .board-wrap-top-title {
@@ -50,10 +50,16 @@
 
 .board-wrap-middle-table {
   width: 99.5%;
-  height: 95%;
+  height: fit-content;
+
   border: 0.5px solid rgb(215, 215, 215);
   text-align: center;
   padding: 200px;
+}
+
+.board-wrap-middle-table-content {
+  border: 1px solid #222;
+  height: 5vh;
 }
 
 @media (max-width: 1500px) {
