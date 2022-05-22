@@ -6,7 +6,9 @@ const logger = require("../../public/js/logger");
 const exec_sql = require("../../public/js/exec_sql");
 require("dotenv").config();
 router.post("/inquiry", function (req, res) {
-  const selectDataQuery = `select * from tbl_board`;
+  const selectDataQuery = `select BOARD_ID,TITLE,CONTENT,BOARD_COUNT,date_format(REG_DT,'%Y-%m-%d %H : %m')  REG_DT,REG_USER_ID 
+    from tbl_board
+    where DEL_DT IS NULL  `;
   getConnection((connection) => {
     (async () => {
       try {
