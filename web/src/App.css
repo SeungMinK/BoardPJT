@@ -22,15 +22,15 @@
 }
 
 .site-layout-background-Sider {
-    height: 100%;
+    height: 110%;
     overflow: hidden;
     outline: 1px solid #aaa;
     outline-offset: -1px;
 }
 .header-layout {
     height: 5% !important;
+    background-color: #aaa !important;
 }
 .footer-layout {
-    background-color: #000 !important;
-    height: 5% !important;
+    height: 3% !important;
 }

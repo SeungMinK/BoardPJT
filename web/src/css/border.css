@@ -1,0 +1,96 @@
+.border-wrap {
+    width: 100%;
+    height: 99%;
+    font-size: 20px;
+}
+
+.border-wrap-top {
+    width: 100%;
+    height: 10%;
+
+    font-size: 3em;
+}
+
+.border-wrap-middle {
+    width: 100%;
+    height: 90%;
+    text-align: center;
+}
+
+.border-wrap-bottom {
+    width: 100%;
+    height: 0%;
+}
+
+.border-wrap-top-title {
+    width: 45%;
+    float: left;
+}
+.border-wrap-top-search {
+    width: 50%;
+
+    margin: 1vh 30% 2vh 25%;
+    float: left;
+
+    font-size: 0.8em;
+    padding: 1vh 2% 1vh;
+}
+
+.border-top-search-input {
+    font-size: 2.5vmin;
+    height: 5vh;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #333333;
+    padding: 1.5vmin;
+}
+.border-content-top-title {
+    width: 100%;
+}
+
+.border-wrap-middle-table {
+    width: 99.5%;
+    height: 95%;
+    border: 0.5px solid rgb(215, 215, 215);
+    text-align: center;
+    padding: 200px;
+}
+
+@media (max-width: 1500px) {
+    .border-wrap {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .border-wrap {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .border-wrap {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 900px) {
+    .border-wrap {
+        font-size: 10px;
+    }
+    .border-wrap-top-title {
+        width: 55%;
+        font-size: 0px;
+    }
+}
+
+@media (max-width: 700px) {
+    .border-wrap {
+        font-size: 8px;
+    }
+}
+@media (max-width: 600px) {
+    .border-wrap {
+        font-size: 7px;
+    }
+}
