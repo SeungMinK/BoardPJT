@@ -16,22 +16,22 @@ const morgan = require("morgan"); // 요청과 응답 에 대한 정보를 콘�
 app.use(morgan("dev")); // (dev, combined ... )
 
 const config = {
-    host: process.env.HOST,
-    port: process.env.PORT,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
-    connectionLimit: process.env.CONNETCIONLIMIT,
+  host: process.env.HOST,
+  port: process.env.PORT,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
+  connectionLimit: process.env.CONNETCIONLIMIT,
 };
 
 /*session 설정 부분*/
 app.use(
-    session({
-        secret: process.env.SESSION_KEY, // 세션을 발급할 때 사용되는 키입니다.
-        resave: false,
-        saveUninitialized: false,
-        store: new MySQLStore(config),
-    })
+  session({
+    secret: process.env.SESSION_KEY, // 세션을 발급할 때 사용되는 키입니다.
+    resave: false,
+    saveUninitialized: false,
+    store: new MySQLStore(config),
+  })
 );
 
 // 보안 처리
@@ -58,14 +58,14 @@ app.use("/api/board", board);
 /*WAS 서버 오픈 port*/
 const port = 8082;
 if (process.env.MODE === "RELEASE") {
-    /*======================== OPEN HTTPS CODE================================================================*/
-    //
-    /*======================================================================================================================*/
+  /*======================== OPEN HTTPS CODE================================================================*/
+  //
+  /*======================================================================================================================*/
 } else {
-    /*======================== OPEN HTTP CODE================================================================*/
-    app.listen(port, () => {
-        logger.info(`[HTTP] WAS START PORT :  ${port}`);
+  /*======================== OPEN HTTP CODE================================================================*/
+  app.listen(port, () => {
+    logger.info(`[HTTP] WAS START PORT :  ${port}`);
 
-        /*======================================================================================================================*/
-    });
+    /*======================================================================================================================*/
+  });
 }
