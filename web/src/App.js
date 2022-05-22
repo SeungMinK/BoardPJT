@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import Login from "./pages/sign/Login";
 import Home from "./pages/Home";
-import Board from "./pages/board/Board";
+import BoardMain from "./pages/board/BoardMain";
 
 import { Layout, Menu, Breadcrumb } from "antd";
 
@@ -100,7 +100,7 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Login />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/board" element={<Board />} />
+              <Route path="/board" element={<BoardMain />} />
             </Routes>
           </Content>
         </Layout>
