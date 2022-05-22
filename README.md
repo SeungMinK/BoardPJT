@@ -5,7 +5,7 @@
 
 ### DB Structure
 
-![DB_TABLE](https://user-images.githubusercontent.com/20696473/169688994-ebd5983d-e9cd-4c30-aa6d-6fa6422a6c21.png)
+![DB_TABLE](https://user-images.githubusercontent.com/20696473/169689503-c5947d87-ec93-4040-a91c-36d29bf203a1.png)
 
 ### SQL
 
@@ -16,7 +16,7 @@ CREATE TABLE `tbl_board` (
   `BOARD_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '게시글 ID',
   `TITLE` varchar(50) NOT NULL COMMENT '제목',
   `CONTENT` varchar(5000) NOT NULL COMMENT '내용',
-  `COUNT` int(11) NOT NULL DEFAULT 0 COMMENT '조회수',
+  `BOARD_COUNT` int(11) NOT NULL DEFAULT 0 COMMENT '조회수',
   `REG_DT` datetime NOT NULL COMMENT '등록 일시',
   `REG_USER_ID` varchar(50) NOT NULL COMMENT '등록한 사용자 ID',
   `UPD_DT` datetime DEFAULT NULL COMMENT '수정 일시',
